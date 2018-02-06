@@ -1,0 +1,9 @@
+This is a game for the µGame game console, based on the classic Space Invaders
+arcade game.
+
+Note that because of memory requirements, you should copy the game.mpy and not
+the game.py file onto the device. This is a compiled version of the same
+program, and it takes less memory to load.
+
+Future version will probably be better optimized and will be able to run the
+uncompiled version directly, but for now there is this workaround.
