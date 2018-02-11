@@ -186,6 +186,8 @@ def pause(info):
         time.sleep(0.25)
     text.clear()
     game.render_block()
+    while ugame.buttons.get_pressed() & ugame.K_O:
+        time.sleep(0.25)
 
 
 tiles = stage.Bank.from_bmp16("tiles.bmp")
