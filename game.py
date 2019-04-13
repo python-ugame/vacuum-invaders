@@ -160,22 +160,6 @@ class Aliens(stage.Grid):
         self.dirty = False
 
 
-class Sound:
-    def __init__(self):
-        self.audio = None
-
-    def play(self, f):
-        if self.audio and self.audio.playing:
-            self.audio.stop()
-        f.seek(0)
-        del self.audio
-        try:
-            self.audio = audioio.AudioOut(board.SPEAKER, f)
-            self.audio.play()
-        except MemoryError:
-            self.audio = None
-
-
 def pause(info):
     while ugame.buttons.get_pressed() & ugame.K_O:
         time.sleep(0.25)
@@ -215,7 +199,7 @@ while True:
     game.render_block()
     pew_sound = open("pew.wav", 'rb')
     boom_sound = open("boom.wav", 'rb')
-    sound = Sound()
+    sound = ugame.audio
 
     while aliens.left + aliens.right < 112 and aliens.y < 80 and not ship.dead:
         for sprite in sprites:
