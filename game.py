@@ -200,6 +200,7 @@ while True:
     pew_sound = open("pew.wav", 'rb')
     boom_sound = open("boom.wav", 'rb')
     sound = ugame.audio
+    sound.mute(False)
 
     while aliens.left + aliens.right < 112 and aliens.y < 80 and not ship.dead:
         for sprite in sprites:
