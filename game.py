@@ -3,9 +3,6 @@ import stage
 import random
 import time
 
-import board
-import audioio
-
 
 class Ship(stage.Sprite):
     def __init__(self):
